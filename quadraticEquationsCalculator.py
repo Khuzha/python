@@ -18,7 +18,7 @@ except:
     exit(1)
 
 d = b*b - 4*a*c
-print(d)
+print('d = %.f' % d)
 
 if d > 0:
     x1 = (-b - math.sqrt(d)) / (2*a)

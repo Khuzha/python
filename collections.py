@@ -1,3 +1,18 @@
+# ------------------ Example -------------------
+employees = [
+    {
+        'name': 'Sardor',
+        'age': 18,
+        'languages': ('Uzbek', 'English', 'German', 'Russian') 
+    },
+    {
+        # ...
+    }
+]
+# ----------------------------------------------
+
+
+
 # ------------------- Notes --------------------
 value = 1, # it`s a tuple
 # better to write tuples so:
@@ -5,12 +20,17 @@ value = (1)
 value = {} # it`s an empty dictionary
 value = set() # it`s an empty set 
 print(value) # set()
+# ----------------------------------------------
 
-# In
+
+
+# In (includes?)
 2 in [1, 2, 3] # True
 2 in (1, 2, 3) # True
 'weight' in {'name': 'Sardor', 'age': 18} # False
 True in {True, None, 42} # True
+
+
 
 # Slices:
 myList = [1, 2, 3, 4, 5]
@@ -20,6 +40,27 @@ myList[1:-1] # [2, 3, 4] - (-1 is the last element, but it`s excluded, first arg
 myList[0::2] # [1, 3, 5] - every second element. Second arguement indicates interval
 myList[::-2] # [5, 3, 1] - every second element beginning from the end
 myList[::-1] # [5, 4, 3, 2, 1] - all elements beginning from the end
+# ----------------------------------------------
+
+
+
+# ------------ Iteration: for...in -------------
+# for key in [1, 2, 3] # 1, 2, 3
+# for key in {'name', 10, True} # 'name', 10, True
+# for key in {'name': 'Sardor', 'age': 18} # 'name', 'age'
+# for key in ('lol', 10, True) # 'lol', 10, True
+
+# newList = (1, 2, 3, 4, 5)
+# for key in newList[::-2] # 5, 3, 1
+# ----------------------------------------------
+
+
+# --------- Unpacking Lists and Tuples ---------
+a, b = [1, 2] # a = 1, b = 2
+age, weight, _, _, city = (35, 75, None, None, 'Munich') # age = 35, weight = 75, _ isn`t any value
+a, b = b, a + b
+# a, b = (1, 2, 3) # ValueError: too many values to unpack
+# a, b, c, d = (1, 2, 3) # ValueError: not enough values to unpack
 # ----------------------------------------------
 
 
@@ -73,6 +114,8 @@ firstDictionary = {
     'age': 18,
     'height': 177,
     }
+
+print(firstDictionary['age'])
 
 firstDictionary['weight'] = 75
 print('full dictionary:', firstDictionary)

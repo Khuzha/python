@@ -1,4 +1,27 @@
-# -------- Generators and list comprehensions --------
+import itertools
+
+# -------------------- Generators -------------------- 
+gen = (x for x in [1, 2, 3])
+# Man schreibt das im (), aber das ist kein 'set'! Das ist 'generator'.
+print(gen) # <generator object <genexpr> at 0x7fb09bdfa3b8>
+# print(gen[0]) - TypeError: 'generator' object is not subscriptable
+# len(gen) - TypeError: object of type 'generator' has no len()
+listFromGen = list(gen)
+print(listFromGen) # [1, 2, 3]
+
+for x in gen:
+    print(x)
+    # This prints nothing because upper you`ve already iterated this generater
+    # and generaters are cleaned after iteration
+
+
+print(range(100))
+
+# ----------------------------------------------------
+
+print(combinations('ab', 3))
+
+# --------------- List comprehensions ----------------
 
 # ----------------------- Lists ---------------------- 
 result = [x*x for x in range(10) if x>3]
@@ -35,7 +58,6 @@ users = [{'age': 20}, {'age': 30}]
 
 # ----------------------- Dicts ---------------------- 
 {key: value for (key, value) in [('name', 'Sardor'), ('age', 20)]} # {'name': 'Sardor', 'age': 20}
-
 
 mydict = {'1': 'value1', '2': 'value2'}
 
